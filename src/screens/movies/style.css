@@ -1,0 +1,14 @@
+.movies {
+  background: #e5e5e5;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.trending-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-left: -5%;
+  margin-right: -5%;
+}

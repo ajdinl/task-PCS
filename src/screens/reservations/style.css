@@ -1,0 +1,47 @@
+.reservations {
+  background: #e5e5e5;
+  min-height: 100vh;
+}
+
+.content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.title {
+  margin-left: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 37px;
+  color: #1a1f55;
+}
+
+.content ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  list-style: none;
+  margin-right: 10%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #1a1f55;
+}
+
+.order-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+li {
+  width: 130px;
+}

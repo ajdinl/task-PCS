@@ -1,0 +1,125 @@
+body {
+  background: #2636cd;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-left: 0px;
+  overflow: hidden;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin-left: -5%; */
+  /* margin-right: -5%; */
+}
+
+.welcome-content-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.welcome-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #ffffff;
+  width: 690px;
+  height: 150px;
+  margin-top: 4%;
+}
+
+.welcome-button {
+  margin-top: 11%;
+}
+
+.welcome-popcorn {
+  margin-top: -180px;
+  margin-left: 10%;
+}
+
+.welcome-content img {
+  box-shadow: 7px 10px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-content,
+.mid-content,
+.bottom-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.top-text,
+.mid-text,
+.bottom-text {
+  margin-bottom: 3%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 63px;
+  color: #1a1f55;
+}
+
+footer {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #ffffff;
+}
+
+.footer-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 66px;
+  color: #ffffff;
+}
+
+.footer-button {
+  background: #ffffff;
+  width: 435px;
+  height: 146px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 76px;
+  line-height: 89px;
+  color: #1a1f55;
+  margin-top: 10px;
+}
