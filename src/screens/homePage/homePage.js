@@ -1,7 +1,7 @@
 import './style.css'
+import { useContext } from 'react'
+import { AppContext } from '../../context'
 import Navbar from '../navbar/Navbar'
-import Image2 from '../../assets/image2.png'
-import Image3 from '../../assets/image3.png'
 import Circle from '../../assets/circle.png'
 import Popcorn from '../../assets/Popcorn_Icon.svg'
 import TapeIcon from '../../assets/Moovies_Icon.svg'
@@ -9,31 +9,20 @@ import TicketIcon from '../../assets/entypo_ticket.svg'
 import CinemaIcon from '../../assets/noto-v1_cinema.svg'
 
 const HomePage = () => {
+  const movies = useContext(AppContext)
   return (
     <div>
       <Navbar />
       <header>
         <div className='welcome-content'>
-          <div>
-            <a href='/'>
-              <img src={Image2} alt='movie' />
+          {movies.map((movie) => (
+            <a href={`https://image.tmdb.org/movie/${movie.id}`} key={movie.id}>
+              <img
+                src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
+                alt='movie'
+              />
             </a>
-          </div>
-          <div>
-            <a href='/'>
-              <img src={Image2} alt='movie' />
-            </a>
-          </div>
-          <div>
-            <a href='/'>
-              <img src={Image3} alt='movie' />
-            </a>
-          </div>
-          <div>
-            <a href='/'>
-              <img src={Image3} alt='movie' />
-            </a>
-          </div>
+          ))}
         </div>
         <div className='welcome-content-bottom'>
           <img className='welcome-popcorn' src={Popcorn} alt='popcorn' />
