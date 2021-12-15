@@ -45,3 +45,28 @@
 li {
   width: 130px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .title {
+    font-size: 16px;
+  }
+  .content ul {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .content {
+    margin-top: 50px;
+  }
+  .title {
+    font-size: 9px;
+  }
+  .content ul {
+    font-size: 7px;
+    margin-top: 0px;
+  }
+  li {
+    width: 40px;
+  }
+}

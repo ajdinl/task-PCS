@@ -1,9 +1,7 @@
 import './style.css'
 import Navbar from '../navbar/Navbar'
-import Image1 from '../../assets/image1.png'
 import Image2 from '../../assets/image2.png'
 import Image3 from '../../assets/image3.png'
-import Image4 from '../../assets/image4.png'
 import Circle from '../../assets/circle.png'
 import Popcorn from '../../assets/Popcorn_Icon.svg'
 import TapeIcon from '../../assets/Moovies_Icon.svg'
@@ -18,57 +16,31 @@ const HomePage = () => {
         <div className='welcome-content'>
           <div>
             <a href='/'>
-              <img src={Image1} style={{ height: '540px' }} alt='movie' />
+              <img src={Image2} alt='movie' />
             </a>
           </div>
           <div>
             <a href='/'>
-              <img
-                src={Image2}
-                style={{ width: '400px', height: '540px' }}
-                alt='movie'
-              />
+              <img src={Image2} alt='movie' />
             </a>
           </div>
           <div>
             <a href='/'>
-              <img
-                src={Image3}
-                style={{ width: '400px', height: '540px' }}
-                alt='movie'
-              />
+              <img src={Image3} alt='movie' />
             </a>
           </div>
           <div>
             <a href='/'>
-              <img
-                src={Image4}
-                style={{
-                  height: '540px',
-                }}
-                alt='movie'
-              />
+              <img src={Image3} alt='movie' />
             </a>
           </div>
         </div>
         <div className='welcome-content-bottom'>
-          <img
-            className='welcome-popcorn'
-            src={Popcorn}
-            alt='popcorn'
-            width={414}
-            height={543}
-          />
+          <img className='welcome-popcorn' src={Popcorn} alt='popcorn' />
           <div className='welcome-text'>
             Enjoy all time classics with smile and popcorn
           </div>
-          <img
-            className='welcome-button'
-            src={Circle}
-            alt='cicle'
-            width={150}
-            height={150}
-          />
+          <img className='welcome-button' src={Circle} alt='cicle' />
         </div>
       </header>
       <main>
@@ -109,6 +81,7 @@ const HomePage = () => {
           />
         </div>
       </main>
+      <div className='background'></div>
       <footer>
         <div className='footer-text-content'>
           <div className='footer-title'>REGISTER NOW</div>

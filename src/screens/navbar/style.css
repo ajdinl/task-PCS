@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -11,12 +12,12 @@ nav {
 nav ul {
   display: flex;
   flex-direction: row;
-  margin-right: 120px;
-  margin-bottom: 5px;
+  margin-right: 380px;
+  width: 100px;
 }
 nav li {
   list-style: none;
-  margin-right: 30px;
+  margin-left: 30px;
 }
 nav li a {
   color: #1a1f55;
@@ -34,6 +35,11 @@ nav .logoandtitle {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+}
+
+.logo {
+  width: 55px;
+  height: 62px;
 }
 
 nav .page-title {
@@ -64,4 +70,69 @@ nav .page-title {
 .navbar-user a div {
   margin-top: 20px;
   margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav ul {
+    margin-right: 250px;
+    margin-top: 0px;
+  }
+  nav li a,
+  .navbar-user a {
+    font-size: 12px;
+  }
+
+  nav .page-title {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  nav {
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    height: 30px;
+  }
+  nav ul {
+    margin-right: 10px;
+    margin-top: 0px;
+  }
+
+  nav li {
+    margin-left: 5px;
+  }
+
+  nav .page-title {
+    padding-bottom: 0px;
+  }
+
+  .navbar-user {
+    margin-left: 45px;
+  }
+
+  .user-avatar {
+    display: none;
+  }
+
+  nav li a,
+  .navbar-user a,
+  nav .page-title {
+    font-size: 6px;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
 }
