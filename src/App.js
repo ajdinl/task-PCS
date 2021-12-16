@@ -21,22 +21,28 @@ const App = () => {
       title: 'Venom: Let There Be Carnage',
     },
   ])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_KEY
     fetch(
-      'https://api.themoviedb.org/3/movie/popular?api_key=e0aa150f7e2e49dc06af5df0dde75888&language=en-US&page=1'
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
     )
       .then((response) => response.json())
-      .then((result) => setMovies(result.results))
+      .then((result) => setMovies(result.results), setLoading(false))
     return () => {}
   }, [])
   console.log(movies)
   return (
     <>
       <Router>
-        <AppContext.Provider value={movies}>
-          <Routes />
-        </AppContext.Provider>
+        {loading ? (
+          <div style={{ textAlign: 'center' }}>'Loading...'</div>
+        ) : (
+          <AppContext.Provider value={movies}>
+            <Routes />
+          </AppContext.Provider>
+        )}
       </Router>
     </>
   )
