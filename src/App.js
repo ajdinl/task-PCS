@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useReducer } from 'react'
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom'
+import { MOVIE_API_URL } from './Api'
+import { FETCH_MOVIES } from './actiontypes/'
 import { AppContext } from './context'
+import { moviesReducer, initialState } from './reducers'
 import HomePage from './screens/homePage/homePage'
 import Movies from './screens/movies/movies'
 import Reservations from './screens/reservations/reservations'
@@ -13,33 +16,22 @@ const Routes = () => {
 }
 
 const App = () => {
-  const [movies, setMovies] = useState([
-    {
-      id: 580489,
-      poster_path: '/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg',
-      release_date: '2021-09-30',
-      title: 'Venom: Let There Be Carnage',
-    },
-  ])
-  const [loading, setLoading] = useState(true)
+  const [state, dispatch] = useReducer(moviesReducer, initialState)
 
   useEffect(() => {
-    const apiKey = process.env.REACT_APP_API_KEY
-    fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
-    )
+    fetch(MOVIE_API_URL)
       .then((response) => response.json())
-      .then((result) => setMovies(result.results), setLoading(false))
+      .then((result) => dispatch({ type: FETCH_MOVIES, payload: result }))
     return () => {}
   }, [])
-  console.log(movies)
+
   return (
     <>
       <Router>
-        {loading ? (
+        {state.loading ? (
           <div style={{ textAlign: 'center' }}>'Loading...'</div>
         ) : (
-          <AppContext.Provider value={movies}>
+          <AppContext.Provider value={state.movies}>
             <Routes />
           </AppContext.Provider>
         )}
