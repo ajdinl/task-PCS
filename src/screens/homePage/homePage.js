@@ -9,16 +9,19 @@ import TicketIcon from '../../assets/entypo_ticket.svg'
 import CinemaIcon from '../../assets/noto-v1_cinema.svg'
 
 const HomePage = () => {
-  const movies = useContext(AppContext)
+  const data = useContext(AppContext)
   return (
     <div>
       <Navbar />
       <header>
         <div className='welcome-content'>
-          {movies.map((movie) => (
-            <a href={`https://image.tmdb.org/movie/${movie.id}`} key={movie.id}>
+          {data.map((result) => (
+            <a
+              href={`https://image.tmdb.org/movie/${result.id}`}
+              key={result.id}
+            >
               <img
-                src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
                 alt='movie'
               />
             </a>

@@ -2,15 +2,15 @@ import { FETCH_MOVIES } from '../actiontypes/'
 
 export const initialState = {
   loading: true,
-  movies: [{}],
+  data: [{}],
 }
 
-export const moviesReducer = (state, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case FETCH_MOVIES:
       return {
         loading: false,
-        movies: action.payload.results,
+        data: action.payload.results,
       }
     default:
       return state

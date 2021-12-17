@@ -1,9 +1,7 @@
-import { useEffect, useReducer } from 'react'
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom'
-import { MOVIE_API_URL } from './Api'
-import { FETCH_MOVIES } from './actiontypes/'
 import { AppContext } from './context'
-import { moviesReducer, initialState } from './reducers'
+import { MOVIE_API_URL } from './Api'
+import useFetch from './hooks/useFetch'
 import HomePage from './screens/homePage/homePage'
 import Movies from './screens/movies/movies'
 import Reservations from './screens/reservations/reservations'
@@ -16,14 +14,7 @@ const Routes = () => {
 }
 
 const App = () => {
-  const [state, dispatch] = useReducer(moviesReducer, initialState)
-
-  useEffect(() => {
-    fetch(MOVIE_API_URL)
-      .then((response) => response.json())
-      .then((result) => dispatch({ type: FETCH_MOVIES, payload: result }))
-    return () => {}
-  }, [])
+  const { state } = useFetch(MOVIE_API_URL)
 
   return (
     <>
@@ -31,7 +22,7 @@ const App = () => {
         {state.loading ? (
           <div style={{ textAlign: 'center' }}>'Loading...'</div>
         ) : (
-          <AppContext.Provider value={state.movies}>
+          <AppContext.Provider value={state.data}>
             <Routes />
           </AppContext.Provider>
         )}
