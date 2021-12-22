@@ -1,17 +1,13 @@
-import { useEffect, useReducer } from 'react'
-import { FETCH_MOVIES } from '../actiontypes'
-import { reducer, initialState } from '../reducers'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-const useFetch = (url) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
+const useFetch = (url, action) => {
+  const dispatch = useDispatch()
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((result) => dispatch({ type: FETCH_MOVIES, payload: result }))
-    return () => {}
-  }, [url])
-  return { state }
+      .then((result) => dispatch(action(result.results)))
+  }, [action, dispatch, url])
 }
 
 export default useFetch

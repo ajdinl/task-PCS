@@ -1,6 +1,5 @@
 import './style.css'
-import { useContext } from 'react'
-import { AppContext } from '../../context'
+import { useSelector } from 'react-redux'
 import Navbar from '../navbar/Navbar'
 import Circle from '../../assets/circle.png'
 import Popcorn from '../../assets/Popcorn_Icon.svg'
@@ -9,17 +8,14 @@ import TicketIcon from '../../assets/entypo_ticket.svg'
 import CinemaIcon from '../../assets/noto-v1_cinema.svg'
 
 const HomePage = () => {
-  const data = useContext(AppContext)
+  const moviesData = useSelector((state) => state.movies.data)
   return (
     <div>
       <Navbar />
       <header>
         <div className='welcome-content'>
-          {data.map((result) => (
-            <a
-              href={`https://image.tmdb.org/movie/${result.id}`}
-              key={result.id}
-            >
+          {moviesData.map((result, index) => (
+            <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
               <img
                 src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
                 alt='movie'
