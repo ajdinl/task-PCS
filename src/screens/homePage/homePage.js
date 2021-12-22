@@ -1,5 +1,8 @@
 import './style.css'
 import { useSelector } from 'react-redux'
+import { FETCH_MOVIES } from '../../features/moviesSlice'
+import { MOVIE_API_URL } from '../../Api'
+import useFetch from '../../hooks/useFetch'
 import Navbar from '../navbar/Navbar'
 import Circle from '../../assets/circle.png'
 import Popcorn from '../../assets/Popcorn_Icon.svg'
@@ -8,7 +11,9 @@ import TicketIcon from '../../assets/entypo_ticket.svg'
 import CinemaIcon from '../../assets/noto-v1_cinema.svg'
 
 const HomePage = () => {
+  useFetch(MOVIE_API_URL, FETCH_MOVIES)
   const moviesData = useSelector((state) => state.movies.data)
+
   return (
     <div>
       <Navbar />
