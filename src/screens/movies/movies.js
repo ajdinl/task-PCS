@@ -8,21 +8,33 @@ import Navbar from '../navbar/Navbar'
 
 const Movies = () => {
   useFetch(TOP_MOVIE_API_URL, FETCH_MOVIES)
-  const moviesData = useSelector((state) => state.movies.data)
+  const moviesData = useSelector((state) => state.movies)
 
   return (
     <div className='movies'>
       <Navbar />
       <div className='trending-title'>TRENDING</div>
+
       <div className='trending-container'>
-        {moviesData.map((result, index) => (
-          <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
-            <img
-              src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
-              alt='movie'
-            />
-          </a>
-        ))}
+        {moviesData.loading ? (
+          <div
+            style={{
+              position: 'absolute',
+              left: '50%',
+            }}
+          >
+            'Loading...'
+          </div>
+        ) : (
+          moviesData.data.map((result, index) => (
+            <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
+                alt='movie'
+              />
+            </a>
+          ))
+        )}
       </div>
       <MoviesDetails />
     </div>

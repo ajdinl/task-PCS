@@ -12,21 +12,32 @@ import CinemaIcon from '../../assets/noto-v1_cinema.svg'
 
 const HomePage = () => {
   useFetch(MOVIE_API_URL, FETCH_MOVIES)
-  const moviesData = useSelector((state) => state.movies.data)
+  const moviesData = useSelector((state) => state.movies)
 
   return (
     <div>
       <Navbar />
       <header>
         <div className='welcome-content'>
-          {moviesData.map((result, index) => (
-            <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
-              <img
-                src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
-                alt='movie'
-              />
-            </a>
-          ))}
+          {moviesData.loading ? (
+            <div
+              style={{
+                position: 'absolute',
+                left: '50%',
+              }}
+            >
+              'Loading...'
+            </div>
+          ) : (
+            moviesData.data.map((result, index) => (
+              <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
+                  alt='movie'
+                />
+              </a>
+            ))
+          )}
         </div>
         <div className='welcome-content-bottom'>
           <img className='welcome-popcorn' src={Popcorn} alt='popcorn' />

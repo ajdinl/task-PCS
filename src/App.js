@@ -13,16 +13,10 @@ const Routes = () => {
 }
 
 const App = () => {
-  const moviesData = useSelector((state) => state.movies)
-
   return (
     <>
       <Router>
-        {moviesData.loading ? (
-          <div style={{ textAlign: 'center' }}>'Loading...'</div>
-        ) : (
-          <Routes />
-        )}
+        <Routes />
       </Router>
     </>
   )
