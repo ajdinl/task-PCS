@@ -7,7 +7,6 @@ import useFetch from '../../hooks/useFetch'
 const MoviesDetails = () => {
   useFetch(UPCOMING_MOVIE_API_URL, FETCH_MOVIES_DETAILS)
   const moviesData = useSelector((state) => state.movies)
-  console.log(moviesData)
   return (
     <div className='movies-list'>
       {moviesData.loading ? (
@@ -22,7 +21,10 @@ const MoviesDetails = () => {
       ) : (
         moviesData.details.map((result, index) => (
           <div className='movies-details'>
-            <a href={`https://image.tmdb.org/movie/${result.id}`} key={index}>
+            <a
+              href={`https://www.themoviedb.org/movie/${result.id}`}
+              key={index}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
                 alt='movie'

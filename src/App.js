@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import HomePage from './screens/homePage/homePage'
 import Movies from './screens/movies/movies'
 import Reservations from './screens/reservations/reservations'
