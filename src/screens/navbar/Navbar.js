@@ -1,24 +1,29 @@
 import './style.css'
+import { Link } from 'react-router-dom'
 import UserAvatar from '../../assets/user_avatar.svg'
 import PageLogo from '../../assets/logo.svg'
 
 const Navbar = () => {
+  function logout(e) {
+    localStorage.removeItem('token')
+  }
+
   return (
     <div>
       <nav>
-        <a href='/' className='logoandtitle'>
+        <Link to='/' className='logoandtitle'>
           <img className='logo' alt='logo' src={PageLogo} />
           <div className='page-title'>Moviegasam Cinema</div>
-        </a>
+        </Link>
         <ul>
           <li>
-            <a href='/reservations'>RESERVATIONS</a>
+            <Link to='/reservations'>RESERVATIONS</Link>
           </li>
           <li>
-            <a href='/account'>ACCOUNT</a>
+            <Link to='/account'>ACCOUNT</Link>
           </li>
           <li>
-            <a href='/movies'>MOVIES</a>
+            <Link to='/movies'>MOVIES</Link>
           </li>
         </ul>
         <div className='navbar-user'>
@@ -26,6 +31,9 @@ const Navbar = () => {
             <div>user@mail.com</div>
             <img className='user-avatar' src={UserAvatar} alt='useravatar' />
           </a>
+          <button className='btn-logout' onClick={() => logout()}>
+            Logout
+          </button>
         </div>
       </nav>
     </div>

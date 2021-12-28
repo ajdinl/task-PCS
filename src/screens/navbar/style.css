@@ -52,6 +52,12 @@ nav .page-title {
   padding-bottom: 10px;
 }
 
+.navbar-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .navbar-user a {
   display: flex;
   flex-direction: row;
@@ -72,6 +78,10 @@ nav .page-title {
   margin-right: 10px;
 }
 
+.btn-logout {
+  margin-right: 10px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 960px) {
   nav {
     justify-content: space-between;
@@ -82,7 +92,8 @@ nav .page-title {
     margin-top: 0px;
   }
   nav li a,
-  .navbar-user a {
+  .navbar-user a,
+  .btn-logout {
     font-size: 12px;
   }
 
@@ -93,6 +104,12 @@ nav .page-title {
   .logo {
     width: 45px;
     height: 45px;
+  }
+  .btn-logout {
+    justify-content: center;
+    width: 50px;
+    margin-right: 7px;
+    padding: 0;
   }
 }
 
@@ -119,7 +136,7 @@ nav .page-title {
   }
 
   .navbar-user {
-    margin-left: 45px;
+    margin-left: 27px;
   }
 
   .user-avatar {
@@ -128,11 +145,17 @@ nav .page-title {
 
   nav li a,
   .navbar-user a,
-  nav .page-title {
-    font-size: 6px;
+  nav .page-title,
+  .btn-logout {
+    font-size: 5px;
   }
   .logo {
     width: 30px;
     height: 30px;
+  }
+  .btn-logout {
+    width: 23px;
+    padding: 0;
+    margin-left: -15px;
   }
 }
