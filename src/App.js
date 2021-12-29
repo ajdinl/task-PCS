@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import HomePage from './screens/homePage/homePage'
 import Movies from './screens/movies/movies'
 import Reservations from './screens/reservations/reservations'
+import Form from './screens/Form'
 
 const Routes = () => {
   return useRoutes([
@@ -32,6 +33,7 @@ const App = () => {
       .then((data) => {
         localStorage.setItem('token', data.token)
       })
+    setIsUserLoggedIn(true)
   }
   useEffect(() => {
     fetch('/isUserAuth', {
@@ -43,20 +45,7 @@ const App = () => {
       .then((data) => (data.isLoggedIn ? setIsUserLoggedIn(true) : null))
   }, [])
   return (
-    <>
-      {isUserLoggedIn ? (
-        <Routes />
-      ) : (
-        <form
-          style={{ width: '50%', margin: '0 auto' }}
-          onSubmit={(e) => handleLogin(e)}
-        >
-          <input type='email' required />
-          <input type='password' required />
-          <input type='submit' value='Submit' />
-        </form>
-      )}
-    </>
+    <>{!isUserLoggedIn ? <Form handleLogin={handleLogin} /> : <Routes />}</>
   )
 }
 

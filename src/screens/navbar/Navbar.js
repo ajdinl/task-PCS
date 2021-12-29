@@ -6,6 +6,7 @@ import PageLogo from '../../assets/logo.svg'
 const Navbar = () => {
   function logout(e) {
     localStorage.removeItem('token')
+    window.location.reload()
   }
 
   return (
