@@ -87,8 +87,8 @@ const HomePage = () => {
             height={450}
           />
         </div>
+        <div className='background'></div>
       </main>
-      <div className='background'></div>
       <footer>
         <div className='footer-text-content'>
           <div className='footer-title'>REGISTER NOW</div>
