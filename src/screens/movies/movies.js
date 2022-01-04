@@ -27,15 +27,22 @@ const Movies = () => {
           </div>
         ) : (
           moviesData.data.map((result, index) => (
-            <a
-              href={`https://www.themoviedb.org/movie/${result.id}`}
-              key={index}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
-                alt='movie'
-              />
-            </a>
+            <>
+              <a
+                href={`https://www.themoviedb.org/movie/${result.id}`}
+                key={index}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
+                  alt='movie'
+                />
+                <div className='movie-details'>
+                  <div className='movie-title'>{result.title}</div>
+                  <div className='movie-description'>{result.overview}</div>
+                  <button className='reserve-now-btn'>Reserve now</button>
+                </div>
+              </a>
+            </>
           ))
         )}
       </div>
