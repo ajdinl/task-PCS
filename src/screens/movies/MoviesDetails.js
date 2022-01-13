@@ -20,19 +20,27 @@ const MoviesDetails = () => {
         </div>
       ) : (
         moviesData.details.map((result, index) => (
-          <div className='movies-details'>
-            <a
-              href={`https://www.themoviedb.org/movie/${result.id}`}
-              key={index}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
-                alt='movie'
-              />
-            </a>
-            <h4> {result.title} </h4>
-            <p>{result.overview}</p>
-          </div>
+          <>
+            <div className='movies-details'>
+              <a
+                href={`https://www.themoviedb.org/movie/${result.id}`}
+                key={index}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
+                  alt='movie'
+                />
+
+                <h4> {result.title} </h4>
+                <p>{result.overview}</p>
+                <div className='movie-details-second'>
+                  <button className='reserve-now-btn btn-second'>
+                    Reserve now
+                  </button>
+                </div>
+              </a>
+            </div>
+          </>
         ))
       )}
     </div>
