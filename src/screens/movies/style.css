@@ -25,8 +25,7 @@
   overflow-x: scroll;
 }
 
-.trending-container a {
-  margin-left: 30px;
+.trending-container div {
   margin-right: 30px;
   text-decoration: none;
 }
@@ -43,7 +42,7 @@
 .movie-details {
   display: none;
   width: 260px;
-  height: 400px;
+  height: 401px;
   margin-top: -405px;
   color: white;
   justify-content: center;
@@ -60,11 +59,14 @@
   overflow: hidden;
 }
 
-.trending-container a:hover .movie-details,
-.movies-details a:hover .movie-details-second {
+.movies-details div:hover .movie-details-second,
+.trending-container div:hover .movie-details {
   display: block;
   background-color: black;
   opacity: 0.8;
+}
+.trending-container div:hover .movie-details {
+  margin-right: -20px;
 }
 
 .movie-title {
@@ -110,6 +112,7 @@
 
 .movies-details {
   background: #ffffff;
+  color: black;
   width: 334px;
   height: auto;
   display: flex;
@@ -118,15 +121,12 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 50px;
 }
-.movies-details a {
-  text-decoration: none;
-  color: black;
-}
 
-.movies-details h4 {
+.movies-details h2 {
   font-size: 28px;
   margin: 1rem;
 }
+
 .movies-details p {
   margin: 1em;
   font-size: 14px;
@@ -164,7 +164,7 @@
     height: 259px;
   }
 
-  .movies-details h4 {
+  .movies-details h2 {
     font-size: 15px;
   }
   .movies-details p {
@@ -205,7 +205,7 @@
     height: 259px;
   }
 
-  .movies-details h4 {
+  .movies-details h2 {
     font-size: 15px;
   }
   .movies-details p {

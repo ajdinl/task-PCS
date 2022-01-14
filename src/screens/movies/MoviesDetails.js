@@ -7,6 +7,7 @@ import useFetch from '../../hooks/useFetch'
 const MoviesDetails = () => {
   useFetch(UPCOMING_MOVIE_API_URL, FETCH_MOVIES_DETAILS)
   const moviesData = useSelector((state) => state.movies)
+
   return (
     <div className='movies-list'>
       {moviesData.loading ? (
@@ -22,23 +23,25 @@ const MoviesDetails = () => {
         moviesData.details.map((result, index) => (
           <>
             <div className='movies-details'>
-              <a
-                href={`https://www.themoviedb.org/movie/${result.id}`}
-                key={index}
-              >
+              <div key={index}>
                 <img
                   src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
                   alt='movie'
                 />
 
-                <h4> {result.title} </h4>
+                <h2> {result.title} </h2>
                 <p>{result.overview}</p>
                 <div className='movie-details-second'>
-                  <button className='reserve-now-btn btn-second'>
+                  <button
+                    onClick={() => {
+                      alert('hello')
+                    }}
+                    className='reserve-now-btn btn-second'
+                  >
                     Reserve now
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </>
         ))
