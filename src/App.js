@@ -3,7 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import HomePage from './screens/homePage/homePage'
 import Movies from './screens/movies/movies'
 import Reservations from './screens/reservations/reservations'
-import Form from './screens/Form'
+import Form from './Components/LoginForm/Form'
 
 const Routes = () => {
   return useRoutes([
