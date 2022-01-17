@@ -26,9 +26,11 @@ const Main = () => {
                 src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
                 alt='movie'
               />
-              <div className='movie-details'>
-                <div className='movie-title'>{result.title}</div>
-                <div className='movie-description'>{result.overview}</div>
+              <div className='trending-movie-details'>
+                <div className='trending-movie-title'>{result.title}</div>
+                <div className='trending-movie-description'>
+                  {result.overview}
+                </div>
                 <button
                   onClick={() => {
                     alert('hello')

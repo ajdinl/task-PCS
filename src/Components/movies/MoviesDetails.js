@@ -8,7 +8,7 @@ const MoviesDetails = () => {
   const moviesData = useSelector((state) => state.movies)
 
   return (
-    <div className='movies-list'>
+    <div className='second-movies-list'>
       {moviesData.loading ? (
         <div
           style={{
@@ -21,7 +21,7 @@ const MoviesDetails = () => {
       ) : (
         moviesData.details.map((result, index) => (
           <>
-            <div className='movies-details'>
+            <div className='second-movies-details'>
               <div key={index}>
                 <img
                   src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`}
@@ -30,12 +30,12 @@ const MoviesDetails = () => {
 
                 <h2> {result.title} </h2>
                 <p>{result.overview}</p>
-                <div className='movie-details-second'>
+                <div className='second-movie-details-hidden'>
                   <button
                     onClick={() => {
                       alert('hello')
                     }}
-                    className='reserve-now-btn btn-second'
+                    className='reserve-now-btn reserve-now-btn-second'
                   >
                     Reserve now
                   </button>

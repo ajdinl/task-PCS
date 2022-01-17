@@ -39,7 +39,7 @@
   opacity: 0.1;
 }
 
-.movie-details {
+.trending-movie-details {
   display: none;
   width: 260px;
   height: 401px;
@@ -49,7 +49,7 @@
   overflow: hidden;
 }
 
-.movie-details-second {
+.second-movie-details-hidden {
   display: none;
   width: auto;
   height: 720px;
@@ -59,23 +59,23 @@
   overflow: hidden;
 }
 
-.movies-details div:hover .movie-details-second,
-.trending-container div:hover .movie-details {
+.second-movies-details div:hover .second-movie-details-hidden,
+.trending-container div:hover .trending-movie-details {
   display: block;
   background-color: black;
   opacity: 0.8;
 }
-.trending-container div:hover .movie-details {
+.trending-container div:hover .trending-movie-details {
   margin-right: -20px;
 }
 
-.movie-title {
+.trending-movie-title {
   font-size: 30px;
   padding: 10px;
   overflow: hidden;
   height: 60px;
 }
-.movie-description {
+.trending-movie-description {
   line-height: 18px;
   padding: 10px;
   width: 240px;
@@ -97,12 +97,12 @@
   margin: 35px;
 }
 
-.btn-second {
+.reserve-now-btn-second {
   margin-left: 70px;
   margin-top: 100px;
 }
 
-.movies-list {
+.second-movies-list {
   width: 100%;
   justify-content: space-around;
   display: grid;
@@ -110,7 +110,7 @@
   margin-top: 100px;
 }
 
-.movies-details {
+.second-movies-details {
   background: #ffffff;
   color: black;
   width: 334px;
@@ -122,25 +122,25 @@
   margin-bottom: 50px;
 }
 
-.movies-details h2 {
+.second-movies-details h2 {
   font-size: 28px;
   margin: 1rem;
 }
 
-.movies-details p {
+.second-movies-details p {
   margin: 1em;
   font-size: 14px;
   font-weight: bold;
 }
 
-.movies-details img {
+.second-movies-details img {
   width: 334px;
   height: auto;
   margin-top: -21px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 960px) {
-  .movies-details {
+  .second-movies-details {
     background: #ffffff;
     width: 160px;
     height: 385px;
@@ -159,28 +159,28 @@
     width: 130px;
     height: 200px;
   }
-  .movies-details img {
+  .second-movies-details img {
     width: 160px;
     height: 259px;
   }
 
-  .movies-details h2 {
+  .second-movies-details h2 {
     font-size: 15px;
   }
-  .movies-details p {
+  .second-movies-details p {
     font-size: 10px;
   }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-  .movies-list {
+  .second-movies-list {
     width: 100%;
     justify-content: space-around;
     display: grid;
     grid-template-columns: auto;
   }
 
-  .movies-details {
+  .second-movies-details {
     background: #ffffff;
     width: 160px;
     height: 385px;
@@ -200,15 +200,15 @@
     width: 130px;
     height: 200px;
   }
-  .movies-details img {
+  .second-movies-details img {
     width: 160px;
     height: 259px;
   }
 
-  .movies-details h2 {
+  .second-movies-details h2 {
     font-size: 15px;
   }
-  .movies-details p {
+  .second-movies-details p {
     font-size: 10px;
   }
 }
