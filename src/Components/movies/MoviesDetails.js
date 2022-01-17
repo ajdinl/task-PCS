@@ -1,4 +1,3 @@
-import './style.css'
 import { useSelector } from 'react-redux'
 import { FETCH_MOVIES_DETAILS } from '../../features/moviesSlice'
 import { UPCOMING_MOVIE_API_URL } from '../../Api'

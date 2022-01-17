@@ -1,5 +1,5 @@
 import './style.css'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../Components/navbar/Navbar'
 
 const Reservations = () => {
   return (
