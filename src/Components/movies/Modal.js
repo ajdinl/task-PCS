@@ -29,15 +29,22 @@ const Modal = ({ result }) => {
                 <p>{result.title}</p>
               </div>
               <div>
-                <h4>Amount</h4> 1 -- 3 ------------ 20
+                <h4>Amount</h4> <p> 1 -- 3 ------------ 20</p>
               </div>
               <div>
-                <h4>DATE</h4> 24 - 12 - 2021
+                <h4>DATE</h4> <p>24 - 12 - 2021</p>
               </div>
               <div>
-                <h4>TIME</h4> 20:30
+                <h4>TIME</h4> <p>20:30</p>
               </div>
-              <button onClick={() => setShowModal(false)}>Cancel</button>
+            </div>
+            <div className='modal-btn-container'>
+              <button className='modal-btn' onClick={() => setShowModal(false)}>
+                Cancel
+              </button>
+              <button className='modal-btn' onClick={() => setShowModal(false)}>
+                Confirm
+              </button>
             </div>
           </div>
         </div>
